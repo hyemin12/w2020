@@ -88,9 +88,10 @@
 		div.conwrapone ul.card>li{float:left;width: 310px;margin-right:25px;}
 		div.conwrapone ul.card>li:last-child{margin-right:0;}
 		div.conwrapone img.cardImg{display:block;}
-		div.conwrapone div.cardbody{padding:20px;
+		div.conwrapone div.cardbody{padding:15px;
 			border: 1px solid #ddd;border-top:none; color:#626262;}
 		div.conwrapone div.cardbody>h3{margin-bottom:8px; color:#424242;}
+		div.conwrapone .cardbody>p{font-size:12px}
 
 		/*contentsTwo*/
 		div.conwraptwo{width: 980px;margin: 0 auto; margin-bottom:25px;}
@@ -102,21 +103,22 @@
 		div.conwraptwo div.cardbody{width: 150px;position: relative;}
 		div.conwraptwo img{position: absolute;right: -15px;}
 		div.conwraptwo h3{margin-bottom:8px; color:#424242;}
-		div.conwraptwo p{font-size:14px;margin-bottom:11px;}
-		div.conwraptwo a{font-size:14px;color:#4b8ce8;}
+		div.conwraptwo p{font-size:12px;margin-bottom:11px;}
+		div.conwraptwo a{font-size:12px;color:#4b8ce8;}
 
 		/*footer*/
 		footer#footer{background-color: #5e5e5e;}
 		.footertopwrap{background-color: #4d4d4d;}
-		.footertop{width: 980px;margin: 0 auto;}
-		.footertop li{float:left;position: relative;}
+		.footertop{width: 980px;margin: 0 auto; position: relative;}
+		.footertop li{float:left; position: relative;}
 		.footertop li:after{
 			content:"";display:block;width: 1px;
 			height: 16px;background-color: #fff;
 			position: absolute;top: 12px;}
 		.footertop li:first-child:after{display:none;}
-		.footertop li>a{display:block;padding:0 15px; 
-			color:white; line-height:40px}
+		.footertop li a{display:block;padding:0 15px; 
+			color:white; line-height:40px;}
+		.footertop li:first-child a{padding-left: 0;}
 
 			/*after displaynone말고 다르게 만드는 방법*/
 			/*왼쪽으로 -1px 옮기고 튀어나간 부분만 overflow:hidden 사용하기
@@ -127,3 +129,13 @@
 			content:"";display:block;width: 1px;
 			height: 16px;background-color: #fff;
 			position: absolute;top: 12px;left:-1px}*/
+		.footertop .top{
+			width: 40px; height: 40px; background-color: orange;
+			position: absolute;right: 0;top: 0;}
+		.footerbottomwrap
+		{width: 980px;margin: 0 auto; color:white;
+			padding: 20px 0;}
+		.footerbottomwrap .logo{
+			float: left;width: 200px;
+			font-size:20px;font-weight:bold;}
+		.footerbottomwrap .copy{float: left;}
