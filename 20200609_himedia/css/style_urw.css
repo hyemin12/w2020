@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+/*header*/
+.utilwrap{
+	width: 1260px;height: 50px;margin: 0 auto;
+	position: relative;}
+.util>ul{width: 611px;position:absolute;top: 10px;right: 0;}
+.util li{float:left; width: 100px;}
+.util li a{
+	display:block; text-align:center;_background-color: orange;}
+.util li:after{
+	content:""; display:block; margin:5px auto;
+	width: 30px; height: 2px;background-color: #000;}
+/*visual*/
+.visualwrap{
+	width: 1760px;height: 550px;
+	margin: 0 auto;}
