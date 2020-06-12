@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<style>
+		/*reset*/
+		*{margin: 0;padding: 0; box-sizing:border-box;}
+		a:link, a:visited{color:#000; text-decoration:none;}
+		li{list-style:none;}
+		.clearfix:after{content:"";display:block;clear:both;}
+	</style>
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".slider").bxSlider({auto:true,mode:"fade"});
+		});
+	</script>
+	<style>
+		/*header*/
+		.header{      }
+		header.hderwrap{
+			width: 1200px;height:30px;margin: auto;
+			position:relative;}
+		div.gnb>ul{
+			width: 500px;
+			position:absolute;right: 0;top: 0px;}
+		div.gnb>ul>li{float:left;width:20%;border-right:2px solid #eee;}
+		div.gnb>ul>li>a{
+			display:block;text-align:center;line-height:30px}
+		div.gnb>ul>li>a:hover{background-color:silver; color:#222;}
+
+		/*headertop*/
+		div.headertop{width: 1200px;height: 50px;margin: 0 auto;}
+		div.headertop>h2.title{text-align:center;line-height:50px;}
+		div.gnbwrap{background-color:#1c5da3;}
+		div.gnbwrap>nav.gnbmenu{width: 1200px;margin: 0 auto;}
+		div.gnbwrap>nav.gnbmenu>ul>li{
+			float:left; width:20%;}
+		div.gnbwrap>nav.gnbmenu>ul>li>a{
+			display:block;text-align:center;color:#fff; height: 40px;
+			line-height:40px; border-right: 1px solid #eee;}
+		div.gnbwrap>nav.gnbmenu>ul>li:first-child{
+			border-left: 1px solid #eee;}
+		div.gnbwrap>nav.gnbmenu>ul>li>a:hover{
+			background-color: #233e6f; color:#fff;}
+
+		/*visualwrap*/
+		div.visualwrap{
+			width: 1200px;height: 500px; margin: 0 auto;}
+		.bx-wrapper {
+	    -moz-box-shadow: 0 none;
+	    -webkit-box-shadow: 0 none;
+	    box-shadow: 0 none;
+	    border: 0 none}
+	    .bx-wrapper .bx-pager{
+	    position: absolute;
+	    bottom: 20px;
+	    width: 100%;
+		}
+		.bx-wrapper .bx-pager.bx-default-pager a.active{ 
+			background: #fff;}
+
+		/*section*/
+		div.section{
+			background-color: #eee;}
+		div.section>ul.card{
+			width: 1200px;margin: 0 auto;}
+		div.section>ul.card>li{
+			float:left; width: 20%; 
+			height: 200px;text-align:center; 
+			color:#fff; padding: 30px;}
+		div.section>ul.card>li:nth-child(1){background-color: #7c99b9;}		
+		div.section>ul.card>li:nth-child(2){background-color: #4f74a1;}		
+		div.section>ul.card>li:nth-child(3){background-color: #4b8ce0;}		
+		div.section>ul.card>li:nth-child(4){background-color: #3db5f3;}		
+		div.section>ul.card>li:nth-child(5){background-color: #95c8ff;}
+		ul.card>li>img{margin-bottom:15px;}
+		ul.card>li>p{font-size:12px}
+		ul.card>li>h3{margin-bottom:7px;}
+
+		/*contents*/
+		.content{
+			width: 1200px;height: 300px;text-align:center;
+			margin:auto;padding: 30px;}
+		.content>h3:after{
+			content:"";display:block;margin: 10px auto;
+			width: 400px;height: 3px;background-color: #000;}
+
+
+	</style>
+</head>
+<body>
+<div class="header">
+	<header class="hderwrap">
+			<div class="gnb clearfix">
+				<ul>
+					<li><a href="#">menu1</a></li>
+					<li><a href="#">menu2</a></li>
+					<li><a href="#">menu3</a></li>
+					<li><a href="#">menu4</a></li>
+					<li><a href="#">menu5</a></li>
+				</ul>
+		</div>	
+	</header>
+</div>
+	
+<!-- <hr> -->
+	<div class="headertop">
+		<h2 class="title"><a href="#">연습하기</a></h2>
+	</div>
+	<div class="gnbwrap">
+		<nav class="gnbmenu">
+			<ul class="clearfix">			
+			<li><a href="#">menu</a></li>
+			<li><a href="#">menu</a></li>
+			<li><a href="#">menu</a></li>
+			<li><a href="#">menu</a></li>
+			<li><a href="#">menu</a></li>
+		</ul>
+		</nav>
+	</div>
+	<div class="visualwrap">
+		<ul class="slider clearfix">
+			<li> <img src="images/pc01.jpg" alt="image1"></li>
+			<li> <img src="images/pc02.jpg" alt="image1"></li>
+			<li> <img src="images/pc03.jpg" alt="image1"></li>
+		</ul>
+	</div>
+	<div class="section">
+		<ul class="card clearfix">
+			<li>
+				<img src="images/icon01.png" alt="">
+				<h3>사회공헌</h3>
+				<p>소외된 이웃과 함께합니다.</p>
+			</li>
+			<li>
+				<img src="images/icon02.png" alt="">
+				<h3>사회공헌</h3>
+				<p>소외된 이웃과 함께합니다.</p>
+			</li>
+			<li>
+				<img src="images/icon03.png" alt="">
+				<h3>사회공헌</h3>
+				<p>소외된 이웃과 함께합니다.</p>
+			</li>			
+			<li>
+				<img src="images/icon04.png" alt="">
+				<h3>사회공헌</h3>
+				<p>소외된 이웃과 함께합니다.</p>
+			</li>			
+			<li>
+				<img src="images/icon05.png" alt="">
+				<h3>사회공헌</h3>
+				<p>소외된 이웃과 함께합니다.</p>
+			</li>
+		</ul>
+	</div>
+	<section class="content">
+		<h3>Lorem ipsum dolor sit amet, consectetur.</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, quam.</p>
+	</section>
+</body>
+</html>
