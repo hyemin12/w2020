@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/jquery.bxslider.css">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/jquery.bxslider.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".slider").bxSlider({
+				auto:true,
+				mode:"fade"});
+		})
+	</script>
+	<style>
+		body{background-image: url(../images/bg_grid.gif);}
+		.boxWrap{width: 410px;_height: 210px;
+			background-color:skyblue;color:#fff;}
+		.boxWrap .box1,
+		.boxWrap .box2{
+			width: 200px;height: 200px;
+			float:left;}
+		.boxWrap .box1{background-color:red;}
+		.boxWrap .box2{background-color:blue;}
+		.box3{height: 200px;background-color:pink;}
+		.box3:after{content:"입니다.";display:block;}
+		.box3:before{content:"핑크는 ";display:block;}
+	</style>
+</head>
+<body>
+	<div class="boxWrap clearfix">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<!-- <div class="clear"></div> -->
+	</div>
+	<div class="box3">box3</div>
+
+<style>
+	.pink{background-color:pink;}
+	.skyblue{background-color: skyblue;}
+	.silver{background-color: silver;}
+	.wrap1{width: 500px;margin: 10px auto;}
+	.wrap1 .left,
+	.wrap1 .right{width: 100px;height: 100px;}
+	.wrap1 .left{float:left;}
+	.wrap1 .right{float:right;}
+</style>
+
+	<h3>1.float</h3>
+	<div class="wrap1 silver clearfix">
+		<div class="left skyblue">left</div>
+		<div class="right pink">right</div>
+	</div>
+
+<style>
+		.wrap2{width: 500px;margin: 0 auto;}
+		.wrap2 li{float:left;width: 20%;}
+		.wrap2 li>a{
+			display:block;text-align:center;
+			line-height:30px;}
+		.wrap2 li>a:hover{background-color:blue;}
+</style>
+
+	<h3>2. float nav</h3>
+	<div class="wrap2 silver">
+		<ul class="clearfix">
+			<li><a href="#">menu1</a></li>
+			<li><a href="#">menu2</a></li>
+			<li><a href="#">menu3</a></li>
+			<li><a href="#">menu4</a></li>
+			<li><a href="#">menu5</a></li>
+		</ul>
+	</div>
+
+<style>
+	.hderwrap{width: 500px;margin:0 auto;
+		background-color: silver;}
+	.hderwrap h1{text-align: center;}
+	.hderwrap li{float:left;width: 20%;}
+	.hderwrap li>a{display:block;text-align: center;line-height:30px;}
+	.hderwrap li>a:hover{background-color:pink;}
+</style>
+
+	<h3>3. header</h3>
+	<div class="hderwrap">
+		<h1>logo</h1>
+		<ul class="clearfix">
+			<li><a href="#">menu1</a></li>
+			<li><a href="#">menu2</a></li>
+			<li><a href="#">menu3</a></li>
+			<li><a href="#">menu4</a></li>
+			<li><a href="#">menu5</a></li>
+		</ul>
+	</div>
+
+<style>
+	/*header*/
+	.headerwrap{width: 1000px; margin:0 auto;background-color:silver;}
+	.headerwrap h1{line-height:50px;text-align: center;}
+	.headerwrap li{float:left;width: 20%;}
+	.headerwrap a{
+		display:block;text-align: center;line-height:35px;}
+	.headerwrap a:hover{background-color:skyblue;}
+
+	/*visual*/
+	.visualwrap{width: 1000px;margin:0 auto;}
+	.bx-wrapper{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border:0 none;
+    margin-bottom: 45px;}
+
+	/*content*/
+    .conwrap{width: 1000px;height: 150px;margin: 0 auto;}
+    .conwrap .aside,
+    .conwrap .content{
+    		height: 150px;float:left;text-align: center;
+    		line-height:150px;font-weight:bold;}
+    .conwrap .aside{width: 300px;}
+    .conwrap .content{width:700px;}
+
+    /*footer*/
+    .footer{width: 1000px;height: 60px;margin: 0 auto;
+    	background-color: gray;
+    	text-align: center; font-weight:bold;
+    	line-height:60px;
+    	margin-bottom:50px}
+
+</style>
+
+	<h3>4. float mainpage</h3>
+	<div class="headerwrap">
+		<h1>logo</h1>
+		<ul class="clearfix">
+			<li><a href="#">menu1</a></li>
+			<li><a href="#">menu2</a></li>
+			<li><a href="#">menu3</a></li>
+			<li><a href="#">menu4</a></li>
+			<li><a href="#">menu5</a></li>
+		</ul>
+	</div>		
+	<div class="visualwrap">
+		<ul class="slider">
+			<li><img src="../images/images01.jpg" alt=""></li>
+			<li><img src="../images/images02.jpg" alt=""></li>
+			<li><img src="../images/images03.jpg" alt=""></li>
+			<li><img src="../images/images04.jpg" alt=""></li>
+			<li><img src="../images/images05.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div class="conwrap">
+		<div class="aside pink">aside</div>
+		<div class="content skyblue">content</div>
+	</div>
+
+	<div class="footer">footer</div>	
+
+<style>
+	.conwrap1{width: 1000px;margin: 0 auto;background-color:blue;}
+	.conwrap1 .contents>img{display:block;}
+	/*.conwrap1 .conbody{float:left;background-color:red;}*/
+	.conbody .img{float: left;display: block;}
+	.conbody .bocy{float: left;}
+	/*.conwrap1 .body{width: 600px;}*/
+</style>
+
+	<div class="conwrap1">
+		<div class="contents">
+			<div class="conbody clearfix">
+				<img src="../images/testimg.jpg" alt="" class="img">
+				<div class="body">
+					<h3>lorem</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui blanditiis, sint harum optio vero ex autem perferendis officia amet, mollitia sit ipsum accusamus quasi fuga beatae omnis enim nisi cum assumenda, aut maxime velit? Assumenda laudantium quia eius ratione eum.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
