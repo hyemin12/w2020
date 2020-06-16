@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.box{
+			width: 300px;height: 300px;
+			position: relative; /*por 입력 시 항상 W,H 값 입력해야함*/
+			overflow:hidden;
+		}
+		.box img{display: block;}
+		.overlay1{
+			width: 300px;height: 300px;
+			background-color: rgba(0,0,0,0.4);
+			position: absolute; color:white;
+			top:250px;
+			transition:0.2s;
+		}
+		.box:hover .overlay1{top:0;}
+		.box .txt1{
+			text-align: center;
+			padding-top:5px;
+			padding-left:20px;
+			padding-right: 20px;
+			font-weight:bold;
+			font-size:1.75em;
+		}
+		.box .txt2{
+			text-align: center;
+			padding-top:15px;
+			padding-left:20px;
+			padding-right: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"> 
+		<img src="../images/testimg.jpg" alt="">
+		<div class="overlay1">
+			<div class="txt1">
+			Paris
+			</div>
+			<div class="txt2">
+			<br>
+			<br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, reprehenderit.
+			</div>
+		</div>
+	</div>
+
+<style>
+	.container{width: 1200px;margin: 0 auto;padding:50px 0;}
+	.container h2{text-align: center;}
+	.container h2:After{
+		content:"";display: block; margin:10px auto;
+		height: 2px;width: 300px;background-color: #555;
+	}
+	.container p{text-align: center;}
+	.container .hdTitle{margin-bottom:20px}
+	.container ul.content li{
+		float:left; width: 281.25px; margin-right:25px;
+		position: relative;overflow:hidden;
+		border-radius:142px;
+	}
+	.container ul.content .overlay{
+		width: 281.25px;height: 281.25px;
+		position: absolute;
+		transition:.3s; top: 250px;
+	}	
+	.container ul.content li:hover .overlay{top: 0;}
+	.container ul.content li img{width: 100%;}
+	.container ul.content li:last-child{margin-right:0;}	
+	.container ul.content li .txt{
+		text-align: center;color:#fff; padding:5px;
+		font-weight:bold;
+	}
+	.container ul.content li .txt2{
+		padding-left:50px;padding-right:60px;color:#fff;
+		font-size:12px;text-align: justify;
+	}
+	.bgOne{
+/*		background-color:skyblue;
+		background-image: url(../images/pc01.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-attachment: fixed; /*모바일버전에서는 사용이 안됨*/
+
+		background:#f00 url(../images/pc01.jpg) no-repeat center fixed;
+			-webkit-background-size: cover;
+			background-size: cover;
+	}
+
+	.black{background-color:rgba(0,0,0,0.5);}
+	.red{background-color: rgba(255,0,0,0.5);}
+	.green{background-color:rgb(20,240,10,0.5);}
+</style>
+
+	<div class="container">
+		<div class="hdTitle">
+			<h2>GALLERY1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, dolore.</p>
+		</div>
+		<ul class="content clearfix ">
+			<li><img src="../images/testimg.jpg" alt="">	
+				<div class="overlay black">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+					<div class="txt2">
+						<br>
+						<br>
+						<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, aliquid ut impedit doloremque praesentium doloribus a voluptatum dolore, ipsa quis.<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et voluptas a ex.
+					</div>						
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+			<div class="overlay black">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+					<div class="txt2">
+						<br>
+						<br>
+						<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, aliquid ut impedit doloremque praesentium doloribus a voluptatum dolore, ipsa quis.<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et voluptas a ex.
+					</div>						
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+				<div class="overlay black">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+					<div class="txt2">
+						<br>
+						<br>
+						<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, aliquid ut impedit doloremque praesentium doloribus a voluptatum dolore, ipsa quis.<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et voluptas a ex.
+					</div>					
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+				<div class="overlay black">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+					<div class="txt2">
+						<br>
+						<br>
+						<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, aliquid ut impedit doloremque praesentium doloribus a voluptatum dolore, ipsa quis.<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et voluptas a ex.
+					</div>
+				</div>		
+			</li>					
+		</ul>
+	</div>		
+
+
+<div class="conWrap bgOne">
+	<div class="container">
+		<div class="hdTitle">
+			<h2>GALLERY2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, dolore.</p>
+		</div>
+		<ul class="content clearfix">
+			<li><img src="../images/testimg.jpg" alt="">	
+				<div class="overlay red">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+			<div class="overlay red">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+				<div class="overlay red">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+				<div class="overlay red">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+				</div>		
+			</li>					
+		</ul>
+	</div>	
+</div>
+
+
+	<div class="container">
+		<div class="hdTitle">
+			<h2>GALLERY3</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, dolore.</p>
+		</div>
+		<ul class="content clearfix">
+			<li><img src="../images/testimg.jpg" alt="">	
+				<div class="overlay green">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+			<div class="overlay green">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+				<div class="overlay green">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+				</div>
+			</li>	
+			<li><img src="../images/testimg.jpg" alt="">
+				<div class="overlay green">
+					<div class="txt">
+					Lorem ipsum.
+					</div>
+				</div>		
+			</li>					
+		</ul>
+	</div>				
+</body>
+</html>
