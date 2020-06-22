@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>box shadow</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.box{
+			width: 300px;height: 300px;background:skyblue;
+			padding:20px 25px;
+			border: 2px solid #f00;
+			transition:.3s;
+			position: absolute;
+			left: 20px;top: 20px;
+			box-shadow:10px 10px 10px #eee, -5px -5px 10px #eee,
+			-10px 20px 10px #eee,10px -10px 10px #eee;	
+			margin-bottom: 200px;		
+		}
+		/*.box:hover{
+			box-shadow:10px 10px 10px #aaa, -5px -5px 10px #aaa,
+			-10px 20px 10px #aaa,10px -10px 10px #aaa;
+		}*/
+
+		.box1{
+			height: 500px;
+			background:url(../images/pc01.jpg) no-repeat center;
+			background-size: cover;
+			position: relative;
+		}
+		.box1 h2{
+			width: 400px;height: 108px;
+			text-align: center;font-size:2.5em;
+			position: absolute;
+			left: 50%;margin-left:-200px;
+			top: 50%;margin-top:-54px;
+			color:#fff;
+			text-shadow: 0 0 10px #000;
+		}
+		.box2{
+			width: 300px;height: 300px;
+			background: green;
+			padding: 10px;
+			position: relative;
+			top: 30px;left: 30px;
+			margin-bottom:100px;
+			transition:.3s
+		}
+		.box2:hover{
+			box-shadow:0 0 20px #444;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo corporis reprehenderit, delectus harum. Vero deserunt accusantium temporibus voluptates voluptatem cumque.</div>
+	<div class="box1">
+		<h2>Lorem ipsum dolor sit amet.</h2>
+	</div>
+
+	<div class="box2">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, dolore, ratione. Similique vel cupiditate reiciendis?
+	</div>
+</body>
+</html>
