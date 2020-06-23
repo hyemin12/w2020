@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>animate css</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<script src="../js/wow.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	<style>
+		body{
+			_background: url(../images/pc01.jpg);
+		}
+		.box{
+			width: 500px;height: 130px;_background: silver;
+/*			position: absolute;top: 50%;margin-top:-65px;
+			left: 50%;margin-left:-250px;*/text-align: center;
+		}
+		.gap{height: 2000px;}
+		.wrap{padding:50px 0;}
+		.container{width: 1000px;margin: 0 auto;}
+		.container ul li{
+			float: left;margin-right:25px;width: 231.25px;
+			height: 231.25px;background:orange;
+			border-radius:10px;
+		}
+		.container li:last-child{margin-right: 0;}
+		.bg1{background: #ddd;}
+		.circle{border-radius:120px !important;}
+	</style>
+</head>
+<body>
+<!-- 	<div class="box animated bounceInDown">
+		<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, impedit.</h1>
+	</div> -->
+	<div class="gap"></div>
+
+	<div class="wrap bg1 ">
+		<div class="container">
+			<ul class="clearfix">
+				<li class="circle wow zoomIn" data-wow-delay="0">Lorem.</li>
+				<li class="circle wow zoomIn" data-wow-delay="0.3s">Similique.</li>
+				<li class="circle wow zoomIn" data-wow-delay="0.6s">Aliquam?</li>
+				<li class="circle wow zoomIn" data-wow-delay="0.9s">Nulla.</li>
+			</ul>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="container">
+			<ul class="clearfix">
+				<li class="wow zoomInLeft" data-wow-delay="1.2s">Lorem.</li>
+				<li class="wow zoomInUp" data-wow-delay="1.5s">Similique.</li>
+				<li class="wow zoomInDown" data-wow-delay="1.8s">Aliquam?</li>
+				<li class="wow zoomInRight" data-wow-delay="2.1s">Nulla.</li>
+			</ul>
+		</div>
+	</div>	
+	<div class="wrap bg1 ">
+		<div class="container">
+			<ul class="clearfix">
+				<li class="wow pulse" data-wow-iteration="infinite" data-wow-delay="2.2s">Lorem.</li>
+				<li class="wow pulse" data-wow-iteration="infinite" data-wow-delay="2.4s">Similique.</li>
+				<li class="wow pulse" data-wow-iteration="infinite" data-wow-delay="2.6s">Aliquam?</li>
+				<li class="wow pulse" data-wow-iteration="infinite" data-wow-delay="2.8s">Nulla.</li>
+			</ul>
+		</div>
+	</div>	
+</body>
+</html>
