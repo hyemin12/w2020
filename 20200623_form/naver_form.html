@@ -5,25 +5,44 @@
 	<meta charset="UTF-8">
 	<title>NAVER FORM</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<style>
-		body{background: #eee;}
-		div#wrap{width: 460px;margin: 0 auto;}
-		#header h1{
-			width: 240px;margin:auto;
-			background: url(images/pc_sp_join.png) no-repeat;
-			background-position: 0 -105px;
-		}
-		#header h1 a{
-			display: block;line-height:44px;
-			text-indent:-9999px;
-		}
-	</style>
+	<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 	<div id="wrap">
 		<header id="header">
 			<h1><a href="#">NAVER</a></h1>
 		</header>
+		<div id="container">
+			<div class="content">
+				<div class="join">
+					<form action="#" method="get">
+						<fieldset>
+							<legend>아이디 비밀번호</legend>
+							<div class="field">							
+								<label for="user-id" class="blind">아이디</label>
+								<input type="text" id="user-id" name="userid" class="inp-field" placeholder="아이디입력" required>
+								<span class="icon mail">@naver.com</span>
+							</div>
+							<div class="field">							
+								<label for="user-pw" class="blind">비밀번호</label>
+								<input type="text" id="user-pw" name="userpw" class="inp-field" placeholder="비밀번호" required>
+								<span class="icon pw">password</span>
+							</div>
+							<div class="field">							
+								<label for="user-pw2" class="blind">비밀번호확인</label>
+								<input type="text" id="user-pw2" name="userpw2" class="inp-field" placeholder="비밀번호확인" required>
+								<span class="icon pw2">password2</span>
+							</div>													
+						</fieldset>
+
+						<div class="btn-area">
+							<input type="submit" value="가입하기" class="btn-submit">
+						</div>
+					</form>
+				</div> <!-- join -->
+			</div> <!-- content -->
+		</div> <!-- container -->
 	</div>
 </body>
 </html>
