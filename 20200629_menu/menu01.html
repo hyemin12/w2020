@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		nav.gnb{width: 1200px;margin: 0 auto;
+			background:pink;
+			position: relative;z-index:1;}
+		nav.gnb>ul{position: relative;}
+		nav.gnb>ul>li{float:left;width: 25%;}
+		nav.gnb>ul>li:hover{background: skyblue;}		
+		nav.gnb>ul>li:hover .smenu{display: block;}
+		nav.gnb>ul>li>a{display: block;text-align:center;line-height:40px;}
+		.header:hover .menubar{display: block;}
+		/*nav.gnb>ul>li:nth-child(1) .smenu{display: block;}*/
+		.smenu{
+			display:none;width: 100%;background: skyblue;
+			position: absolute;left: 0;
+		}
+		.smenu>li{float: left;}
+		.smenu>li>a{
+			display: block;width: 100px;
+			text-align: center;line-height:30px;
+		}
+
+		.menubar{
+			display: none;
+			width: 100%;height: 30px;background:skyblue;
+			position: absolute;z-index: 2;
+		}
+
+
+		.visual{height: 200px;background: orange;position:relative;}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<nav class="gnb">
+			<ul class="clearfix">
+				<li><a href="#">MENU01</a>
+					<ul class="smenu clearfix">
+						<li><a href="#">smenu0101</a></li>
+						<li><a href="#">smenu0102</a></li>
+						<li><a href="#">smenu0103</a></li>
+						<li><a href="#">smenu0104</a></li>
+					</ul>
+				</li>
+				<li><a href="#">MENU02</a>
+					<ul class="smenu clearfix" style="padding-left:300px">
+						<li><a href="#">smenu0201</a></li>
+						<li><a href="#">smenu0202</a></li>
+						<li><a href="#">smenu0203</a></li>
+					</ul>
+				</li>
+				<li><a href="#">MENU03</a>
+					<ul class="smenu clearfix" style="padding-left:600px">
+						<li><a href="#">smenu0301</a></li>
+						<li><a href="#">smenu0302</a></li>
+						<li><a href="#">smenu0303</a></li>
+					</ul>
+				</li>
+				<li><a href="#">MENU04</a>
+					<ul class="smenu clearfix" style="padding-left:900px">
+						<li><a href="#">smenu0401</a></li>
+						<li><a href="#">smenu0402</a></li>
+						<li><a href="#">smenu0403</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<!-- <div class="menubar"></div> -->
+	</header>
+	<div class="visual"></div>
+
+<style>
+	.menuGnb{width: 1200px;margin: 0 auto;position: relative;z-index:1;}
+	.menuGnb>ul{}
+	.menuGnb>ul>li{float:left;width: 25%;}
+	.menuGnb>ul>li:hover{background: pink;}
+	.menuGnb>ul>li>a{display: block;text-align: center;line-height: 45px;}
+
+	.menuGnb>ul>li:hover .subM{display: block;}
+
+	.subM{
+		display: none;
+		width: 100%; background: pink;position: absolute;left: 0;}
+	.subM>li{float:left;width: 100px;}
+	.subM>li>a:hover{background: #f00;color:#fff;}
+	.subM>li>a{display: block;text-align: center;}
+
+	.visual2{height: 250px;background:magenta;position: relative;}
+</style>
+
+	<div class="menuGnb">
+		<ul class="clearfix">
+			<li><a href="#">MENU1</a>
+			<ul class="subM clearfix" style="padding-left:0">
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+			</ul>
+			</li>
+			<li><a href="#">MENU2</a>
+			<ul class="subM" style="padding-left:300px">
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+			</ul>
+			</li>
+			<li><a href="#">MENU3</a>
+			<ul class="subM" style="padding-left:600px">
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+			</ul>
+			</li>
+			<li><a href="#">MENU4</a>
+			<ul class="subM" style="padding-left:900px">
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+			</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="visual2"></div>
+
+<style>
+	.mngnb{width: 1200px;margin: 0 auto;background: #eee;}
+	.mngnb>ul{}
+	.mngnb>ul>li{float:left;width: 20%;}
+	.mngnb>ul>li:hover{background: #ddd;}
+	.mngnb>ul>li>a{display: block;text-align: center;line-height: 45px;}
+
+	.mngnb>ul>li:first-child .sbMe{display: block;}
+
+	.sbMe{display: none;}
+	.sbMe>li{}
+	.sbMe>li>a{display: block;text-align: center;}
+</style>
+
+	<div class="mngnb">
+		<ul class="clearfix">
+			<li><a href="#">MENU1</a>
+				<ul class="sbMe">
+					<li><a href="#">menu1</a></li>
+					<li><a href="#">menu2</a></li>
+					<li><a href="#">menu3</a></li>
+					<li><a href="#">menu4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">MENU2</a>
+				<ul class="sbMe">
+					<li><a href="#">menu1</a></li>
+					<li><a href="#">menu2</a></li>
+					<li><a href="#">menu3</a></li>
+					<li><a href="#">menu4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">MENU3</a>
+				<ul class="sbMe">
+					<li><a href="#">menu1</a></li>
+					<li><a href="#">menu2</a></li>
+					<li><a href="#">menu3</a></li>
+					<li><a href="#">menu4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">MENU4</a>
+				<ul class="sbMe">
+					<li><a href="#">menu1</a></li>
+					<li><a href="#">menu2</a></li>
+					<li><a href="#">menu3</a></li>
+					<li><a href="#">menu4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">MENU5</a>
+				<ul class="sbMe">
+					<li><a href="#">menu1</a></li>
+					<li><a href="#">menu2</a></li>
+					<li><a href="#">menu3</a></li>
+					<li><a href="#">menu4</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
