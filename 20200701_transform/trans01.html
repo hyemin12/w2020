@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>transform</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.bgColorOne{background:#ddd;}
+		.bgColorTwo{background:#f00;}
+		
+		/*contents*/
+		.contents{width: 1200px;margin: 0 auto;padding:100px 0;}
+		.contents>ul{}
+		.contents>ul>li{
+			float: left;width:228px;margin-right: 15px;
+			position: relative;overflow:hidden;
+		}
+		.contents>ul>li:last-child{margin-right:0;}
+		.contents>ul>li>img{width: 100%;transition:.3s;}
+		.contents>ul>li>div.bg{
+			width: 100%;height: 100%;
+			background-color:rgba(0,0,0,0.3);
+			position: absolute;
+			transition:.3s;
+		}
+		.contents>ul>li>div.bg>h3{
+			color:#fff;width: 100px;
+			text-align: center;line-height:40px;
+			position: absolute;left: 50%;top: 50%;
+			transform:translate(-50%,-50%);
+		}
+		.contents>ul>li:hover div.left{left: 0;top: 0;}
+		.contents>ul>li:hover div.right{right: 0;top: 0;}
+		.contents>ul>li:hover div.top{top: 0;}
+		.contents>ul>li:hover div.bottom{top: 0;}
+		.contents>ul>li:hover div.center{
+			left: 50%;top: 50%;margin-left:-114px;margin-top:-114px;
+			transform:scale(1);
+		}
+		.contents>ul>li:hover img{transform:scale(1.2)}
+		
+		.left{left: -100%;}
+		.right{right: -100%;}
+		.top{top:-100%;}
+		.bottom{top:100%;}
+		.center{
+			left: 50%;top: 50%;margin-left:-114px;margin-top:-114px;
+			transform:scale(0);
+		}
+
+		.btn{width: 200px;height: 40px;position: relative;}
+		.btn>a{display: block;text-align: center;line-height: 40px;}
+		.btn>.bar{
+			width: 0;height: 5px;background:#f00;
+			position: absolute;bottom: 0;
+			transition:.3s;
+		}
+		.btn:hover .bar{width: 100%;}
+
+		.right1{right: 0;}
+
+		.btnOne{width: 200px;height: 40px;position: relative;}
+		.btnOne>a{
+			display: block;text-align: center;line-height:40px;
+		}
+		.btnOne>.bar1,
+		.btnOne>.bar2{
+			width: 100%;height: 5px;background: #00f;
+			position: absolute;
+			transform:scaleX(0);
+			transition:.3s;
+		}
+		.btnOne:hover .bar1{transform:scaleX(1);}
+		.btnOne:hover .bar2{transform:scaleX(1);}
+
+		.bar1{bottom: 0;}
+		.bar2{top: 0;}
+	</style>
+</head>
+<body>
+	<div class="container bgColorOne">
+		<div class="contents">
+			<ul class="clearfix">
+				<li>
+					<img src="../images/testimg.jpg" alt="">
+				<div class="bg left">
+					<h3>여행</h3>
+				</div>
+				</li>
+				<li>
+					<img src="../images/testimg.jpg" alt="">
+				<div class="bg right">
+					<h3>여행</h3>
+				</div>
+				</li>
+				<li>
+					<img src="../images/testimg.jpg" alt="">
+				<div class="bg top">
+					<h3>여행</h3>
+				</div>
+				</li>
+				<li>
+					<img src="../images/testimg.jpg" alt="">
+				<div class="bg bottom">
+					<h3>여행</h3>
+				</div>
+				</li>
+				<li>
+					<img src="../images/testimg.jpg" alt="">
+				<div class="bg center">
+					<h3>여행</h3>
+				</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="btn">
+		<a href="#">BUTTON</a>
+		<div class="bar"></div>
+	</div>
+	<div class="btn">
+		<a href="#">BUTTON</a>
+		<div class="bar right1"></div>
+	</div>
+	<div class="btnOne">
+		<a href="#">BUTTON</a>
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+	</div>
+</body>
+</html>

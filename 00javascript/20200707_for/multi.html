@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>구구단</title>
+	<style>
+		.box{float: left;width: 150px;text-align: center;}
+	</style>
+</head>
+<body>
+	<script>
+		var x,y;
+		for(x=2;x<10;x++){
+			document.write("<div class='box'>");
+			document.write("<h2>");
+			document.write(x + "단 <br>");
+			document.write("</h2>");
+			for(y=1;y<=10;y++){
+				document.write(x+"x"+y+"="+x*y+"<br>");
+			}
+		document.write("</div>")	
+		}	
+	</script>
+	<script>
+		var x,y;
+		for(x=10;x<22;x++){
+			document.write("<div class='box'>")
+			document.write("<h3 style='color:#f00;'>")
+			document.write(x+"단 <br>");
+			document.write("</h3>")
+			for(y=1;y<10;y++){
+				document.write("<div style='border:1px solid #666'>")
+				document.write(x+"x"+y+"="+x*y+"<br>");
+				document.write("</div>")
+			};
+		document.write("</div>")
+		};
+	</script>
+	<script>
+		var sum = 0;
+		for(i=1;i<=10;i++){
+			// sum = sum + i;
+			sum += i;
+		}
+		document.write(sum+"<br>");
+
+		var sum=0;
+		var i=1;
+		while(i<=10){
+			sum+=i;
+			i++;
+		}
+		document.write(sum+"<br>");
+	</script>
+	<script>
+		// 1부터 100까지 수 중 3의 배수 합 구하기
+		var sum=0;
+		var x=0;
+		while(x<10){ //ture:1, false:0
+			x=x+3; //3 6 9 12
+			if(x>10){break;}
+			sum=sum+x; //3 9 18 30	
+		}
+		document.write(sum)
+
+		var x=0;
+		var sum=0;
+		for(x=1;x<10;x++){
+			if(x%3!=0){continue;}
+			//나눈 나머지 값이 0과 같지 않으면 다음 단계로 진행 
+			//(결과값이 거짓일 경우에만 ex.1 2 4 5 7 8)
+			sum = sum+x;
+		}
+		document.write(sum)
+	</script>
+</body>
+</html>
