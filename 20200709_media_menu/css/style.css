@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+.topNav{background: #333;}
+	.topNav a{
+		display: block;float: left;color:#fff;
+		padding:14px 16px;
+	}
+	.topNav a.toggle{float: right;}
+	.topNav a.toggle{display: none;}
+
+	
+	@media screen and (max-width:576px){ /*mobile ver.*/
+		/*.topNav a:not(:first-child){display:none;} 1번째만 제외하고 나머지는 display none*/
+		.menuWrap{width: 100%;position:fixed;}
+		.topNav a.toggle{display: block;}
+		.topNav a:first-child{display: block;}
+		.topNav a{display: none;}
+		.topNav.responsive a{float: none;display: block;}
+		.topNav.responsive a.toggle{position: absolute;right: 0;top: 0;}
+	}
+	@media screen and (min-width:577px) and (max-width:922px){ /*tablet ver.*/
+		.menuWrap{width: 100%;}
+	}
+	@media screen and (min-width:923px){ /*pc ver.*/
+		.topNav{width: 1200px;position: fixed;
+			left:50%;transform:translateX(-50%);top:20px;
+	}
