@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>array</title>
+</head>
+<body>
+	<script>
+		var num=[10,323,423,813,1231,2001];
+		console.log("배열의 갯수 "+num.length);
+		num[0] = 206;
+		num[6] = 825;
+		num[10] =2000;
+
+		for(var i=0;i<num.length;i++){
+			document.write("배열 데이터["+i+"] = " + num[i]+"<br>");
+		}
+
+		// 화면에 이미지 출력하는 방법
+		var img=["pc01.jpg","pc02.jpg","pc03.jpg"]
+		var imgTxt=["우주1","우주2","우주3"]
+
+		for(var i=0;i<img.length;i++){
+			document.write("<div class='box"+i+"'>");
+			// document.write("<img src=\"../../images/"+img[i]+"\"");
+			document.write("<img src='../../images/" + img[i] + "'>");
+			document.write("<p>"+imgTxt[i]+"</p>");
+			document.write("</div>");
+		}
+	</script>
+</body>
+</html>
