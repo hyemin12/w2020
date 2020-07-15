@@ -23,7 +23,8 @@ body{font-family: 'Roboto', sans-serif;font-weight:400;}
 	}
 
 /*visual*/
-#visual{width: 1450px;margin: 0 auto;position: relative;}
+#visual{width: 1450px;margin: 0 auto;position: relative;overflow:hidden;}
+
 	#visual li{border-radius:20px;overflow:hidden;}
 	#visual .txtBody{position: absolute;top: 220px;left: 125px;}
 	#visual .txtBody h3{
@@ -159,7 +160,7 @@ body{font-family: 'Roboto', sans-serif;font-weight:400;}
 
 /*footer*/
 #footer{height: 280px;}
-	#footer .line{width: 1500px;height: 1px;background: #e3e1ec;}
+	#footer .line{width: 1500px;height: 1px;background: #e3e1ec;margin: 0 auto;}
 	#footer .footerWrap{width: 1200px;margin: 0 auto;padding-top:50px;}
 	#footer h1.logo{
 		width: 106px;height: 45px; float: left;
@@ -177,3 +178,5 @@ body{font-family: 'Roboto', sans-serif;font-weight:400;}
 	#footer .snsWrap li:nth-child(2){background-position: -62px 0;}
 	#footer .snsWrap li:nth-child(3){background-position: -126px 0;}
 	#footer .snsWrap li:nth-child(4){background-position: -188px 0;}
+
+	#footer .snsWrap li a{display: block;line-height:45px;}

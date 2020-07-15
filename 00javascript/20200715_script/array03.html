@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+</head>
+<body>
+	<script>
+		var com = [95,88,,72,68,,69,82,78,87];
+
+		function printAvg(){
+			var sum = 0;
+			var n = com.length; //com의 개수
+			var count = 0; //입력점수 카운터 변수
+			for(var i=0;i<n;i++){
+				if(com[i]==undefined){
+					continue;
+				}else{
+					sum = sum + com[i]; //sum+=com[i];
+					count++; //count = count + 1; 
+				}
+			}
+			document.write(count+"<br>");
+			return (sum/count);
+		}
+		var getAvg = printAvg();
+		document.write(getAvg+"<br>");
+	</script>
+
+	<script>
+		var eng = [100,90,75,64,,25,73,,42,63,87,,78,80,100,20,13]
+
+		function engAvg(){
+			var sum=0;
+			var engn = eng.length;
+			var engcount = 0;
+			for(var i=0;i<engn;i++){
+				if(eng[i]==undefined){
+					continue;
+				}else{
+					sum = sum + eng[i];
+					engcount++;
+				}
+			}
+			document.write("<br>영어 점수 총합은 = "+sum+"<br>");
+			document.write("영어 점수 입력한 학생 수는 = "+engcount+"<br>");
+			return (sum/engcount);
+		}
+
+		var getAvg = engAvg();
+		document.write("영어 점수 평균은 = "+getAvg+"<br>");
+	</script>
+
+	<script>
+		var kor = [92,100,85,64,32,,78,54,,61,43,25,,10,,88]
+
+		function korAvg(){
+			var sum = 0;
+			var korn = kor.length;
+			var kcount = 0;
+			for(var i=0;i<korn;i++){
+				if(kor[i]==undefined){
+					continue;
+				}else{
+					sum = sum + kor[i];
+					kcount++;
+				}
+				
+			}
+			document.write("<br>국어 점수 총합은 "+sum+"<br>")
+			document.write("국어 점수 입력한 학생 수는 "+kcount)
+			return (sum/kcount);
+		}
+		var getKorAvg = korAvg();
+		document.write("<br> 국어 점수 평균은 "+getKorAvg);
+	</script>
+</body>
+</html>
