@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>array</title>
+</head>
+<body>
+	<script>
+		var x = 5;
+		var arr = [100,"Seoul",true,x] //true 문자X 조건식에서 사용하는 참과 거짓값
+		function printArr(){};
+		for(var i=0;i<arr.length;i++){
+			document.write(arr[i]+"<br>");
+		}
+		printArr();
+	</script>
+	<hr>
+	<script>
+		var arrSum = [10,20,30,40,"50"];
+		
+		function printArrSum(){
+			var sum = 0;
+			for(var i=0;i<arrSum.length;i++){
+				// sum = sum + arrSum[i]
+				sum+=arrSum[i]
+			}
+			return sum;
+		}
+		// document.write(sum);
+		var result = printArrSum();
+		document.write(result);
+		//10050으로 출력됨 100은 총합, 50은 문자
+	</script>
+	<hr>
+	<script>
+		var kdata = ["서울","부산","청주","대구"];
+
+		function pArr(item){
+			document.write(item);
+		}
+		kdata.forEach(pArr);
+
+		var data = [1,2,3,4,5,6,7,8,9,10];
+		var sum = 0;
+
+		function addData(value){
+			sum += value
+		}
+
+		data.forEach(addData);
+		document.write(sum);
+	</script>
+</body>
+</html>
