@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Toggle Menu</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<style>
+	/*pc ver*/
+		@media screen and (min-width:923px){
+		
+		#main-header{
+			width: 1200px;height: 45px;background: #555;
+			margin: 0 auto;position: relative;
+		}
+			#main-header h1{width: 130px;text-align: center;}
+			#main-header h1 a{color:#eee;}
+			#main-header .navWrap{position: absolute;left: 150px;top: 0px;}
+			#main-header .navWrap li{float: left;padding-right:20px;line-height: 45px;}
+			#main-header .navWrap li a{color:#fff;}
+			#main-header .navWrap li:hover a{color:skyblue;}
+
+		.toggle-menu{display: none;}
+		}
+		
+	/*tablet ver*/
+		@media screen and (max-width:922px) and (min-width:577px){
+	
+		#main-header{
+			width: 100%;height: 45px;background: #555;
+			margin: 0 auto;position: relative;
+		}
+			#main-header h1{width: 130px;text-align: center;}
+			#main-header h1 a{color:#eee;}
+			#main-header .navWrap{position: absolute;left: 150px;top: 0px;}
+			#main-header .navWrap li{float: left;padding-right:20px;line-height: 45px;}
+			#main-header .navWrap li a{color:#fff;}
+			#main-header .navWrap li:hover a{color:skyblue;}
+
+		.toggleMenu{display: none;}
+		}
+
+	/*mobile ver*/
+		@media screen and (max-width:576px){
+		
+		#main-header{
+			width: 100%;height: 45px;background: #555;
+			margin: 0 auto;position: relative;
+		}
+			#main-header h1{width: 130px;text-align: center;}
+			#main-header h1 a{color:#eee;}
+			#main-header .navWrap{
+				width: 100%;height: 100%;background: gray;
+				position: fixed;top: 100%;
+			}
+			#main-header .navWrap .topNav{
+				position: absolute;left: 50%;top: 50%;
+				transform:translate(-50%,-50%);
+			}
+			#main-header .navWrap li{float: none;}
+			#main-header .navWrap li a{font-size:20px;color:#fff;line-height:45px;}
+			#main-header .navWrap li:hover a{color:skyblue;}
+
+		.toggleMenu{display: block;}
+		}
+	
+		/*toggle-menu*/
+		.toggleMenu{
+			width: 30px;height: 30px;
+			border: 1px solid #ddd;
+			position: absolute;right: 20px;top: 7px;
+		}
+			.toggleMenu div{
+				width: 17px;height: 3px;background: #fff;
+				border-radius:2px;
+				position: absolute;left:6px;
+			}
+			.toggleMenu .bar1{top: 6px;}
+			.toggleMenu .bar2{top: 13px;}
+			.toggleMenu .bar3{top: 20px;}
+
+			.toggleClick .bar1{
+				background: skyblue;
+				top: 50%;left: 50%;
+				transform:translate(-50%,-50%) rotate(45deg);
+			}
+			.toggleClick .bar2{display: none;}
+			.toggleClick .bar3{
+				background: skyblue;
+				top: 50%;left: 50%;
+				transform:translate(-50%,-50%) rotate(-45deg);
+			}
+			.toggleClick.toggleMenu{border: 1px solid skyblue;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".toggleMenu").click(function(){
+				var toggle = $(this).attr("class");
+				if(toggle == "toggleMenu"){
+					$(".toggleMenu").addClass("toggleClick");
+					$(".navWrap").stop().animate({top:"45px"},300);
+				}else{
+					$(".toggleMenu").removeClass("toggleClick");
+					$(".navWrap").stop().animate({top:"100%"},300);
+				}
+			});
+		});
+
+		$(window).resize(function(){
+			var wSize = $(window).width();
+
+			if(wSize > 576){
+				$(".navWrap").css("top","0");
+				$(".toggleMenu").removeClass("toggleClick");
+			}else{
+				$(".navWrap").css("top","100%");
+			}
+		});
+	</script>
+</head>
+<body>
+	<header id="main-header">
+		<h1><a href="#">LOGO</a></h1>
+		<nav class="navWrap">
+			<div class="topNav">
+				<ul class="clearfix">
+					<li>
+						<a href="#"><i class="fab fa-adobe"></i>COMPANY</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-umbrella"></i>PRODUCT</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-globe"></i>CONTACT</a>
+					</li>
+					</li>
+				</ul>
+			</div> <!-- topNav -->
+		</nav>
+		<div class="toggleMenu">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+	</header>
+</body>
+</html>
