@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>dom02</title>
+</head>
+<body>
+	Lorem ipsum <span class="text">dolor</span> sit amet, consectetur adipisicing elit. Tenetur aut porro possimus <span>veritatis</span> unde placeat. Doloremque <span class="text">rerum</span> nam dolores praesentium, <span class="text">amet</span>, aut officia illum modi.
+	<div onclick="change()">태그변경</div>
+	<div onclick="cChange()">클래스변경</div>
+	<script>
+		function change(){
+			var span = document.getElementsByTagName("span");
+			console.log(span.length);
+			// span[0].style.color = "red";
+			for(var i=0;i<4;i++){
+				span[i].style.color = "red";
+				span[i].style.fontWeight = "bold";
+			}
+		}	
+		function cChange(){
+			var span = document.getElementsByClassName("text");
+			console.log(span.length);
+			// span[0].style.color = "red";
+			for(var i=0;i<4;i++){
+				span[i].style.color = "orchid";
+				span[i].style.fontWeight = "bold";
+			}
+		}
+	</script>
+	<hr>
+	Lorem ipsum dolor sit amet, <span class="highLight">consectetur</span> adipisicing elit. Dolorum ducimus, porro odio pariatur sint dolor natus obcaecati vel ea non corporis, <span class="highLight">magni quaerat</span> quisquam nobis officiis. Laborum recusandae sunt assumenda magni nihil qui rem natus provident molestiae dignissimos, iusto corporis adipisci <span>voluptatibus</span> numquam libero sapiente sit non totam inventore culpa ullam doloremque suscipit. Cumque commodi <span class="highLight">reprehenderit</span> tempore aperiam blanditiis rerum inventore sed modi quisquam beatae. Sit, quia facilis id <span>aspernatur</span> velit aliquam magni. Vitae alias ab quibusdam hic adipisci atque, optio doloribus sit quae aperiam possimus. Ex beatae aliquid minima qui saepe quod <span class="highLight">quisquam</span> amet, alias incidunt laudantium fugit fugiat.
+	<button onclick="spanChange()">빨간펜</button>
+	<button onclick="highL()">형광펜</button>
+	<button onclick="reset()">원래대로</button>
+	<script>
+		function spanChange(){
+			var span = document.getElementsByTagName("span");
+			for(var i=0;i<span.length;i++){
+				span[i].style.color = "red";
+				span[i].style.fontSize = "20px";
+			}
+		}
+		function highL(){
+			var high = document.getElementsByClassName("highLight");
+			for(var x=0;x<high.length;x++){
+				high[x].style.background = "yellow";
+			}	
+		}
+	</script>
+</body>
+</html>

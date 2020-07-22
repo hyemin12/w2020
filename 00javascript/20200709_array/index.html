@@ -15,6 +15,26 @@
 	</script>
 </head>
 <body>
-	
+	<p id="contentP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, dolor.</p>
+	<button type="button" onclick="btnOne()">버튼1</button>
+	<button type="button" onclick="btnTwo()">버튼21</button>
+
+	<script>
+		function btnOne(){
+			var p = document.getElementById("contentP");
+				p.style.color = "red";
+				p.style.background = "gray";
+				alert("경고창");
+		}
+		function btnTwo(){
+			var p = document.getElementById("contentP");
+				p.style.color = "black";
+				p.style.background = "white";
+		}
+	</script>
+	<script>
+		var name = "고혜민";
+		document.write(name);
+	</script>
 </body>
 </html>
