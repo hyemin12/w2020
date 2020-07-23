@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>dom</title>
+	<style>
+		#myDiv{width: 100px;height: 100px;background: skyblue;}
+	</style>
+	<script>
+		function createDiv(){
+			var obj = document.getElementsByTagName("body")[0];
+			var newDiv = document.createElement("div");
+			newDiv.innerHTML = "졸립니다";
+			newDiv.setAttribute("id","myDiv");
+			newDiv.onclick = function(){
+				var p = newDiv.parentElement;
+				p.removeChild(newDiv)
+			};
+
+			obj.appendChild(newDiv);
+		}
+	</script>
+</head>
+<body>
+	<div>졸리구요</div>
+	<button type="button" onclick="createDiv()">div 생성</button>
+</body>
+</html>
