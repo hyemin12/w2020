@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<script>
+		var point = 75;
+		var grade =""
+		if(point>=90){
+			grade="A";
+		}else if(point>=80){
+			grade="B"
+		}else if(point>=70){
+			grade="C"
+		}else if(point>=60){
+			grade="D"
+		}else if(point<60){
+			grade="E"
+		}
+		document.write("한성용 점수는 "+point+" 학점은 "+grade+"입니다.")
+	</script>
+
+	<script>
+		var a =1;
+		var x = ++a;
+		document.write(x);
+
+		var x= a++;
+		document.write(x);
+		document.write(a);
+	</script>
+	
+</body>
+</html>

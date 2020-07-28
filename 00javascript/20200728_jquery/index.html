@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<!-- 제이쿼리 -->
+	<script>
+		$(document).ready(function(){    //body 문서 읽고 스크립트 실행
+			// $("p").hide();
+// -----------------------------------------------------------------------------//
+			// n번째 숨기는 방법 1
+			// $("p").eq(0).hide();  //p태그 중 0번째만 숨겨줌
+
+			// n번째 숨기는 방법 2
+			// var $plen = $("p").length;
+			// for(var i=0;i<$plen;i++){
+			// 	 $("p").eq(i).hide();
+			// }
+// -----------------------------------------------------------------------------//
+			// length 구하는 방법 1
+			// var $plen = $("p").length;
+			// console.log($plen);
+
+			// length 구하는 방법 2
+			// console.log($("p").length);
+// -----------------------------------------------------------------------------//
+			// css 적용하는 방법
+			// var $plen = $("p").length;
+			// $("p").eq(i).css("background","red").css("font-size",20)
+// -----------------------------------------------------------------------------//
+			//제이쿼리 이벤트 적용하는 방법
+			// $(선택자).on("click",function(){});
+			// $(선택자).click(function(){});
+
+			//스크립트 이벤트 적용하는 방법
+			// dom.addEventListner("click",function(){})
+
+			$(".btn-hide").click(function(){
+				$("p").slideUp();
+			});
+			$(".btn-show").click(function(){
+				$("p").slideDown();
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>1.Lorem ipsum dolor.</p>
+	<p>2.Ut, debitis, suscipit.</p>
+	<p>3.Id, labore, aspernatur?</p>
+	<p>4.Corrupti, aliquid. Quod!</p>
+	<p>5.Porro, harum et.</p>
+	<p>6.Nobis, ut, earum!</p>
+	<p>7.Totam, non, nam.</p>
+	<p>8.Facilis, saepe, aspernatur?</p>
+	<p>9.Libero, saepe, sequi!</p>
+	<p>10.Neque, minus, a.</p>
+
+	<button type="button" class="btn-show">button1</button>
+	<button type="button" class="btn-hide">button2</button>
+	<!-- 자바스크립 -->
+	<script>
+		// var tagP = document.getElementsByTagName("p");
+		// for(var i=0;i<tagP.length;i++){
+		// 	tagP[i].style.display = "none";
+		// }
+	</script>
+
+	<!-- tab 메뉴 만들기 -->
+	<style>
+		ul>li{
+			float: left;
+			width: 100px;background: skyblue;
+			text-align: center;line-height:40px;
+			margin-right: 10px;margin-bottom: 10px;
+		}
+		.wrap{width: 400px;border: 1px solid #000;padding:20px;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".box2,.box3").hide();
+
+			// 방법1
+			// $("ul>li").eq(0).click(function(){
+			// 	$(".box1").show();
+			// 	$(".box2, .box3").hide();
+			// });
+			// $("ul>li").eq(1).click(function(){
+			// 	$(".box2").show();
+			// 	$(".box1, .box3").hide();
+			// });
+			// $("ul>li").eq(2).click(function(){
+			// 	$(".box3").show();
+			// 	$(".box1, .box2").hide();
+			// });
+
+			//방법2
+			$("ul>li").eq(0).click(function(){
+				$(".box1, .box2, .box3").hide();
+				$(".box1").fadeIn();
+			});
+			$("ul>li").eq(1).click(function(){
+				$(".box1, .box2, .box3").hide();
+				$(".box2").fadeIn();
+			});
+			$("ul>li").eq(2).click(function(){
+				$(".box1, .box2, .box3").hide();
+				$(".box3").fadeIn();
+			});
+		});
+	</script>
+
+	<ul class="clearfix">
+		<li>menu1</li> <!-- $("ul>li").eq(0).click(function(){}); -->
+		<li>menu2</li> <!-- $("ul>li").eq(1).click(); -->
+		<li>menu3</li> <!-- $("ul>li").eq(2).click(); -->
+	</ul>
+	<div class="wrap">
+		<div class="box1">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, magnam!</div>
+		<div class="box2">2. Cupiditate quis ipsum ratione commodi aspernatur, distinctio eaque animi dolorem.</div>
+		<div class="box3">3. Aut porro cumque atque eos neque voluptatum obcaecati animi possimus!</div>
+	</div>
+</body>
+</html>
