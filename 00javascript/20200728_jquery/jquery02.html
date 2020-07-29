@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		.wrap{width: 750px;margin: 0 auto;}
+		ul>li{
+			float: left;
+			width: 150px; 
+			text-align: center;line-height: 35px;
+			border: 1px solid #000;
+			border-left:0 none;
+			cursor:pointer;
+		}
+		ul>li:first-child{border-left: 1px solid #000;}
+		ul>li:hover{background: skyblue;}
+		.active{background: orange;}
+
+		.boxContent{
+			width: 750px;
+			border: 1px solid #000;
+			border-top:0 none;
+			padding:25px;
+		}
+		.boxContent .box2,
+		.boxContent .box3,
+		.boxContent .box4,
+		.boxContent .box5{display: none;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$("ul>li").click(function(){
+				var num = $(this).index();
+				console.log(num);
+				$("ul>li").removeClass();
+				$(this).addClass("active");
+				$(".boxContent>div").hide().eq(num).fadeIn();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="clearfix">
+			<li class="active">menu1</li>
+			<li>menu2</li>
+			<li>menu3</li>
+			<li>menu4</li>
+			<li>menu5</li>
+		</ul>
+		<div class="boxContent">
+			<div class="box1">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quam nulla ullam quasi eaque quisquam voluptatibus perspiciatis voluptate, amet voluptatem tenetur unde hic earum, obcaecati quos! Perferendis nesciunt suscipit modi quisquam facilis, laboriosam, velit, odit beatae magni perspiciatis cupiditate ex. Fugiat cupiditate iste facere, ab rem rerum. Sit, fuga eum.</div>
+			<div class="box2">2. Itaque a excepturi dolorem, neque eveniet mollitia! Ea magni, error nihil, necessitatibus nesciunt dicta corporis non natus in, sed deleniti veritatis vero nulla, voluptatum ex rem eum amet! Veniam nihil tempora debitis dolor possimus necessitatibus dolorem, provident hic error magni obcaecati inventore, deleniti earum placeat natus ducimus dolores dolore itaque.</div>
+			<div class="box3">3. Necessitatibus illum sapiente cupiditate eos, non vel ducimus odit voluptates doloremque, maiores temporibus veniam? Esse explicabo temporibus obcaecati ducimus, exercitationem dolorem? Magnam similique suscipit itaque qui hic aspernatur architecto doloremque rerum sint obcaecati alias aliquam, cupiditate iusto doloribus dolores beatae eligendi maiores velit repellendus tempora, aliquid rem nostrum. Rem, perspiciatis.</div>
+			<div class="box4">4. Cum unde fuga quas praesentium, quo. Iste, aliquid, suscipit non quod minus quia, rem in nemo, reprehenderit voluptatibus neque! Cumque quas accusamus sapiente, beatae ex maiores ab necessitatibus magni deserunt tempora voluptas alias assumenda incidunt ratione corporis quod earum est excepturi rem fuga at. Nobis sunt non ipsum, consectetur minima.</div>
+			<div class="box5">5. Quidem mollitia atque beatae deleniti delectus magni reprehenderit officia. Temporibus ab possimus ea. Provident accusantium corporis delectus in doloremque quos eum possimus incidunt, quasi voluptas eaque molestiae veritatis? Dolorem odit ratione perspiciatis, saepe maxime neque quod quia vitae incidunt quibusdam blanditiis similique perferendis et eum, dolores, sed voluptatem assumenda pariatur.</div>
+		</div>
+	</div>
+</body>
+</html>

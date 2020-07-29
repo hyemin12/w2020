@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		ul>li{
+			float: left;
+			width: 100px;background: skyblue;
+			text-align: center;line-height: 40px;
+			margin-right:10px;
+			border-radius: 10px;
+			cursor:pointer;
+		}
+		.boxWrap{
+			width: 320px;
+			padding:20px;
+			border: 1px solid #000;
+		}
+		.boxWrap .box2,
+		.boxWrap .box3{display: none;}
+		.active{background: #f00;}
+	</style>
+	<script>
+		$(document).ready(function(){
+
+			//방법 1
+			// $("ul>li").eq(0).click(function(){
+			// 	$(".boxWrap>div").hide().eq(0).show();
+			// });
+			// $("ul>li").eq(1).click(function(){
+			// 	$(".boxWrap>div").hide().eq(1).show();
+			// });
+			// $("ul>li").eq(2).click(function(){
+			// 	$(".boxWrap>div").hide().eq(2).show();
+			// });
+
+			//방법 2
+			// $("ul>li").click(function(){
+			// 	var liNum = $(this).index();  //자기 자신의 n번째
+			// 	$("ul>li").removeClass().eq(liNum).addClass("active");
+			// 	$(".boxWrap>div").hide().eq(liNum).show();
+			// });
+
+			//방법 2-1
+			// $("ul>li").click(function(){
+			// 	$("ul>li").removeClass().eq($(this).index()).addClass("active");
+			// 	$(".boxWrap>div").hide().eq($(this).index()).show();
+			// });
+
+			//방법 3
+			$("ul>li").click(function(){
+				var linum = $(this).index();
+				$("ul>li").removeClass();
+				$(this).addClass("active")
+				$(".boxWrap>div").hide();
+				$(".boxWrap>div").eq(linum).fadeIn();
+			});
+		});
+	</script>
+</head>
+<body>
+	<ul class="clearfix">
+		<li class="active">menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+	</ul>
+	<div class="boxWrap">
+		<div class="box1">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis fuga cum quisquam excepturi praesentium molestias, ad, autem totam laborum a commodi est error voluptatibus, ipsum cumque enim alias adipisci odit.</div>
+		<div class="box2">2. Explicabo fugiat, aperiam quia praesentium delectus? Quis ipsam ab quod sunt consequatur odio fugiat corporis, impedit quae ipsa, delectus, possimus sint modi ut eum aut necessitatibus, dicta repudiandae repellendus. Harum.</div>
+		<div class="box3">3. Numquam similique est, esse vel iste, consectetur quam obcaecati earum tenetur quod ducimus voluptatum illo eum veniam, facilis, minus voluptatibus dicta molestiae velit repellendus suscipit perferendis assumenda? Id, vitae, esse!</div>
+	</div>
+</body>
+</html>
