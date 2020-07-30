@@ -55,7 +55,7 @@
 			$("ul>li").click(function(){
 				var linum = $(this).index();
 				$("ul>li").removeClass();
-				$(this).addClass("active")
+				$(this).addClass("active");
 				$(".boxWrap>div").hide();
 				$(".boxWrap>div").eq(linum).fadeIn();
 			});

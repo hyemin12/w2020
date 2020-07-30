@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>애니메이션 메뉴</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		.nav{width: 1000px;margin: 0 auto;}
+		.menu li{
+			float: left;
+			width: 20%;
+			text-align: center;line-height: 40px;
+			border-right:1px solid #ddd;
+			cursor:pointer;
+			position: relative;
+		}
+		.menu li:first-child{border-left:1px solid #ddd;}
+		.menu li:hover:before{
+			content:"";display: block;
+			width: 8px;height: 8px; background: #f00;
+			border-radius:50%;
+			position: absolute; left: 50%;
+			transform:translateX(-50%);
+		}
+		.menu li.active:before{
+			content:"";display: block;
+			width: 8px;height: 8px; background: #f00;
+			border-radius:50%;
+			position: absolute; left: 50%;
+			transform:translateX(-50%);
+		}
+		.bar{
+			width: 200px;height: 5px;background: #f00;
+			border-radius:3px;
+			position: relative;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".menu li").mouseenter(function(){
+				var linum = $(this).index();
+				console.log(linum);
+				// $(".bar").css("left",linum*200);
+				$(".bar").stop().animate({left:linum*200},100);
+			});
+			$(".menu li").click(function(){
+				var linum = $(this).index();
+				$(".menu li").removeClass();
+				$(this).addClass("active");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="nav">
+		<ul class="menu clearfix">
+			<li class="active">menu1</li>
+			<li>menu2</li>
+			<li>menu3</li>
+			<li>menu4</li>
+			<li>menu5</li>
+		</ul>
+		<div class="bar"></div>
+	</div>
+</body>
+</html>
