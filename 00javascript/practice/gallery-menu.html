@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		body{background: silver;}
+		.menu{width: 1000px;margin: 0 auto;margin-bottom:20px;border-bottom: 1px solid #000;}
+		.menu>li{
+			float: left;
+			width: 25%;
+			text-align: center;line-height: 40px;
+			border-right: 1px solid #000;
+			position: relative;
+		}
+		.menu>li:first-child{border-left: 1px solid #000;}
+		.menu>li:hover{background: #eee;}
+		.sub{
+			display: none;
+			width: 100%;background: #eee;
+			position: absolute;
+		}
+		/*.menu>li:first-child .sub{display: block;}*/
+		.sub li{width: 100%;}
+		.sub li:hover{background: pink;}
+
+		.gallery{
+			width: 1000px;margin: 0 auto;
+			background: #fff;padding-top:50px;
+		}
+		.gallery .images{
+			width: 760px;height: 470px;margin: 0 auto;
+			overflow:hidden;margin-bottom: 30px;			
+		}
+		.gallery .thumbnail,
+		.gallery .leftBtn,
+		.gallery .rightBtn{float: left;}
+		.gallery .thumbnail{
+			width: 760px;height: 75px;
+			overflow:hidden;position: relative;margin-bottom: 50px;
+		}
+		.gallery .thumbnail ul{
+			width: 3000px;height: 75px;
+			position: absolute;left: 0;
+		}
+		.gallery .thumbnail li{
+			float: left;margin-left:40px;
+		}
+		.gallery .thumbnail li:nth-child(1),
+		.gallery .thumbnail li:nth-child(6),
+		.gallery .thumbnail li:nth-child(11){margin-left: 0 !important;}
+		.gallery .leftBtn,
+		.gallery .rightBtn{width: 120px;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".menu>li").mouseover(function(){
+				var i = $(this).index();
+				$(".menu>li").eq(i).find("ul.sub").stop().slideDown();
+			});
+			$(".menu>li").mouseout(function(){
+				$("ul.sub").hide();
+			});
+			$(".thumbnail li").click(function(){
+				var i = $(this).index();
+				$(".images img").hide();
+				$(".images img").eq(i).fadeIn();
+			});
+
+			var num = 0;
+			$(".leftBtn").click(function(){
+				num--;
+				if(num == -1){num=2};
+				moveimg();
+			});
+			$(".rightBtn").click(function(){
+				num++;
+				if(num == 3){num=0};
+				moveimg();
+			});
+			function moveimg(){
+				var moveimg = num * -760;
+				$(".container ul").css("left",moveimg).css("transition","0.3s")
+			};
+		});
+	</script>
+</head>
+<body>
+	<ul class="menu clearfix">
+		<li>
+			<a href="#">MENU1</a>
+			<ul class="sub">
+				<li><a href="#">submenu1</a></li>
+				<li><a href="#">submenu2</a></li>
+				<li><a href="#">submenu3</a></li>
+				<li><a href="#">submenu4</a></li>
+				<li><a href="#">submenu5</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">MENU2</a>
+			<ul class="sub">
+				<li><a href="#">submenu1</a></li>
+				<li><a href="#">submenu2</a></li>
+				<li><a href="#">submenu3</a></li>
+				<li><a href="#">submenu4</a></li>
+				<li><a href="#">submenu5</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">MENU3</a>
+			<ul class="sub">
+				<li><a href="#">submenu1</a></li>
+				<li><a href="#">submenu2</a></li>
+				<li><a href="#">submenu3</a></li>
+				<li><a href="#">submenu4</a></li>
+				<li><a href="#">submenu5</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">MENU4</a>
+			<ul class="sub">
+				<li><a href="#">submenu1</a></li>
+				<li><a href="#">submenu2</a></li>
+				<li><a href="#">submenu3</a></li>
+				<li><a href="#">submenu4</a></li>
+				<li><a href="#">submenu5</a></li>
+			</ul>
+		</li>
+	</ul>
+	<div class="gallery">
+		<div class="images">
+			<img src="images/0.jpg" alt="0">
+			<img src="images/1.jpg" alt="1">
+			<img src="images/2.jpg" alt="2">
+			<img src="images/3.jpg" alt="3">
+			<img src="images/4.jpg" alt="4">
+
+			<img src="images/5.jpg" alt="5">
+			<img src="images/6.jpg" alt="6">
+			<img src="images/7.jpg" alt="7">
+			<img src="images/8.jpg" alt="8">
+			<img src="images/9.jpg" alt="9">
+
+			<img src="images/10.jpg" alt="10">
+			<img src="images/11.jpg" alt="11">
+			<img src="images/12.jpg" alt="12">
+			<img src="images/13.jpg" alt="13">
+			<img src="images/14.jpg" alt="14">
+		</div>
+		<div class="container clearfix">
+			<div class="leftBtn">
+				<img src="images/btn_left.gif" alt="">
+			</div>
+			<div class="thumbnail">
+				<ul class="clearfix">
+					<li><img src="images/thumb0.jpg" alt="0"></li>
+					<li><img src="images/thumb1.jpg" alt="1"></li>
+					<li><img src="images/thumb2.jpg" alt="2"></li>
+					<li><img src="images/thumb3.jpg" alt="3"></li>
+					<li><img src="images/thumb4.jpg" alt="4"></li>
+			
+					<li><img src="images/thumb5.jpg" alt="5"></li>
+					<li><img src="images/thumb6.jpg" alt="6"></li>
+					<li><img src="images/thumb7.jpg" alt="7"></li>
+					<li><img src="images/thumb8.jpg" alt="8"></li>
+					<li><img src="images/thumb9.jpg" alt="9"></li>
+			
+					<li><img src="images/thumb10.jpg" alt="10"></li>
+					<li><img src="images/thumb11.jpg" alt="11"></li>
+					<li><img src="images/thumb12.jpg" alt="12"></li>
+					<li><img src="images/thumb13.jpg" alt="13"></li>
+					<li><img src="images/thumb14.jpg" alt="14"></li>
+				</ul>
+			</div>
+			<div class="rightBtn">
+				<img src="images/btn_right.gif" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

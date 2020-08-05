@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>gallery2</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		body{background: #eee;}
+		.gallery{
+			width: 820px;height: 620px;background:#fff;
+			margin: 20px auto;
+		}
+		.images{width: 760px;margin: 0 auto;padding-top:30px;margin-bottom: 15px;}
+		.images div{display: none;}
+		.images div:first-child{display: block;}
+
+		.thumbnail div{float: left;}
+		.thumbnail .leftBtn,
+		.thumbnail .rightBtn{width: 30px;position: relative;top: 25px;}
+		.thumbnail .leftBtn{left: 8px;}
+		.thumbnail .rightBtn{right: -10px;}
+
+		.thumbnail .container{
+			width: 760px;height: 96px;
+			position: relative;overflow:hidden;
+		}
+		.thumbnail .container ul{
+			width: 2280px;
+			position: absolute;left: 0;
+		}
+		.thumbnail .container li{
+			float: left;
+			text-align: center;margin-left: 40px;
+		}
+		
+		.ml0{margin-left: 0 !important;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".container li").click(function(){
+				var i = $(this).index();
+				$(".images>div").hide();
+				$(".images>div").eq(i).show();
+			});
+
+			var sNum = 0;
+			$(".leftBtn").click(function(){
+				sNum--;
+				if(sNum == -1){sNum=2};
+				slideWidth();
+			});
+			$(".rightBtn").click(function(){
+				sNum++;
+				if(sNum == 3){sNum=0};	
+				slideWidth();
+			});
+
+			function slideWidth(){
+				var sWidth = sNum * -760;
+				$(".container>ul").css("left",sWidth).css("transition","0.3s");
+				// $(".container>ul").stop().animate({left:sWidth},300);
+				console.log(sNum);
+			}
+		});
+	</script>
+</head>
+<body>
+	<div class="gallery">
+		<div class="images">
+			<div><img src="images/0.jpg" alt="img0"></div>
+			<div><img src="images/1.jpg" alt="img1"></div>
+			<div><img src="images/2.jpg" alt="img2"></div>
+			<div><img src="images/3.jpg" alt="img3"></div>
+			<div><img src="images/4.jpg" alt="img4"></div>
+
+			<div><img src="images/5.jpg" alt="img5"></div>
+			<div><img src="images/6.jpg" alt="img6"></div>
+			<div><img src="images/7.jpg" alt="img7"></div>
+			<div><img src="images/8.jpg" alt="img8"></div>
+			<div><img src="images/9.jpg" alt="img9"></div>
+
+			<div><img src="images/10.jpg" alt="img10"></div>
+			<div><img src="images/11.jpg" alt="img11"></div>
+			<div><img src="images/12.jpg" alt="img12"></div>
+			<div><img src="images/13.jpg" alt="img13"></div>
+			<div><img src="images/14.jpg" alt="img14"></div>
+		</div>
+		<div class="thumbnail clearfix">
+			<div class="leftBtn">
+				<img src="images/btn_left.gif" alt="이전">
+			</div>
+			<div class="container">
+				<ul class="clearfix">
+					<li class="ml0"><img src="images/thumb0.jpg" alt="thum0">img0</img></li>
+					<li><img src="images/thumb1.jpg" alt="thum1">img1</img></li>
+					<li><img src="images/thumb2.jpg" alt="thum2">img2</img></li>
+					<li><img src="images/thumb3.jpg" alt="thum3">img3</img></li>
+					<li><img src="images/thumb4.jpg" alt="thum4">img4</img></li>
+				
+					<li class="ml0"><img src="images/thumb5.jpg" alt="thum5">img5</img></li>
+					<li><img src="images/thumb6.jpg" alt="thum6">img6</img></li>
+					<li><img src="images/thumb7.jpg" alt="thum7">img7</img></li>
+					<li><img src="images/thumb8.jpg" alt="thum8">img8</img></li>
+					<li><img src="images/thumb9.jpg" alt="thum9">img9</img></li>
+				
+					<li class="ml0"><img src="images/thumb10.jpg" alt="thum10">img10</img></li>
+					<li><img src="images/thumb11.jpg" alt="thum11">img11</img></li>
+					<li><img src="images/thumb12.jpg" alt="thum12">img12</img></li>
+					<li><img src="images/thumb13.jpg" alt="thum13">img13</img></li>
+					<li><img src="images/thumb14.jpg" alt="thum14">img14</img></li>
+				</ul>
+			</div>
+			<div class="rightBtn">
+				<img src="images/btn_right.gif" alt="다음">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
