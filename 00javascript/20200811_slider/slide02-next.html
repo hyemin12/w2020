@@ -21,38 +21,45 @@
 			var current = 0;
 			var banner = $("#wrapper li");
 			var i;
+			var overBtn = false;
 
 			function slideNext(){
-				// current++;
-				i = current + 1; //다음배너값구하기
-				if(i == 3){i=0};
+				if(overBtn == false){
+					overBtn = true; //버튼을 눌렀을 때 순간적으로 true값으로 변해서 애니메이션 실행이 끝날 때까지는 작동하지 않음
+					i = current + 1; //다음배너값구하기
+					if(i == 3){i=0};
 
-				var currentEl = banner.eq(current); //현재 배너
-				var nextEl = banner.eq(i);  //다음 배너
-
-				currentEl.css({left:0}).stop().animate({left:"-100%"},1000);
-				nextEl.css({left:"100%"}).stop().animate({left:0},1000);
-
-				current = i; 
-				//최종값 
-				//(클릭하면 다음 슬라이드로 값이 변해야하기 때문에)
-				console.log(current);
+					slideView("next");
+				}
 			};
 
 			function slidePrev(){
-				i = current - 1;
-				if(i==-1){i=2}
-				// current--;
+				if(overBtn==false){
+					overBtn = true;
+					i = current - 1;
+					if(i==-1){i=2}
+					// current--;
 
-				var currentEl = banner.eq(current);
-				var prevEl = banner.eq(i);
-
-				currentEl.css({left:"0"}).stop().animate({left:"100%"},1000);
-				prevEl.css({left:"-100%"}).stop().animate({left:0},1000);
-
-				current = i;
-				console.log(current);
+					slideView("prev");
+				}
 			};
+
+			function slideView(view){
+				var currentEl = banner.eq(current);
+				var nextEl = banner.eq(i);
+
+				if(view == "prev"){
+					currentEl.css({left:"0"}).stop().animate({left:"100%"},1000,function(){overBtn=false;});
+					nextEl.css({left:"-100%"}).stop().animate({left:0},1000);
+				}else{
+					var currentEl = banner.eq(current); //현재 배너
+					var nextEl = banner.eq(i);  //다음 배너
+
+					currentEl.css({left:0}).stop().animate({left:"-100%"},1000,function(){overBtn=false;});
+					nextEl.css({left:"100%"}).stop().animate({left:0},1000);
+				}
+				current = i;
+			}
 
 			$(".btn-next").click(function(){
 				slideNext();
@@ -61,6 +68,12 @@
 			$(".btn-prev").click(function(){
 				slidePrev();
 			});
+
+			function trigger(){
+				$(".btn-next").trigger("click"); //btn-next를 trigger로 클릭
+			}
+			setInterval(trigger,3000); //3초마다 새로고침 (1000=1s)
+
 		});
 	</script>
 	<style>

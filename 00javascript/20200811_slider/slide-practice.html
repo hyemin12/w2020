@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		#wrapper{width: 600px;margin: 0 auto;}
+		#wrapper ul{width: 522px;height: 400px;overflow:hidden;position: relative;}
+		#wrapper li{
+			width: 522px;height: 400px;
+			position: absolute;left: 100%;
+		}
+		#wrapper li:nth-child(1){left: 0;}
+
+	</style>
+	<script>
+		$(function(){
+
+			var current = 0;
+			var imgBanner = $("#wrapper li");
+			var i;
+
+	// -------------자동으로 슬라이드 움직이기
+
+			// function slideMove(){		
+			// 	$("#wrapper li").eq(current).css({left:0}).animate({left:"-100%"},300);
+			// 	current++;
+			// 	if(current == 4){current=0};
+			// 	//current++; 위에 있는거는 0번째를 유지해야하기 때문에 if문을 current++;아래 작성해야함
+			// 	$("#wrapper li").eq(current).css({left:"100%"}).animate({left:0},300);
+			// }
+			// setInterval(slideMove,3000);
+
+	// -------------버튼 눌러서 슬라이드 움직이기
+		//1. next 버튼 제작
+		//2. slideNext 함수 제작
+		//3. next 버튼 클릭 시 증감연산자 작동 여부
+		//4. 함수 내 current / i = current + 1 제작
+		//5. current banner dom 구하고 애니메이션 실행
+		//6. next banner dom 구하고 애니메이션 실행
+		//7. if(i==3){i=0};
+		//8. 함수 내의 i 값을 current 값으로 대입(current=i)
+			function nextMove(){
+				i = current + 1;
+				var bannerEl = $("#wrapper li").eq(current);
+				console.log(i)
+
+			};
+			function prevMove(){
+
+			};
+
+
+			$(".next").click(function(){
+				nextMove();
+			});
+			$(".prev").click(function(){
+				prevMove();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<ul class="clearfix">
+			<li><img src="../images/spring.jpg" alt=""></li>
+			<li><img src="../images/summer.jpg" alt=""></li>
+			<li><img src="../images/fall.jpg" alt=""></li>
+			<li><img src="../images/winter.jpg" alt=""></li>
+		</ul>
+		<button class="prev">이전</button>	
+		<button class="next">다음</button>	
+	</div>
+</body>
+</html>

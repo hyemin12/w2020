@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.section{width: 1200px;margin: 20px auto;padding:0 100px;}
+
+			.section .section_title{float: left;width: 200px;}
+			.section_title h3{font-size:20px;color:#333;margin-bottom: 10px;}
+			.section_title a.more_btn{
+				display: block;
+				width:23px;height: 23px;
+				background-image: url(images/more_btn.png);
+				background-position: 0 -23px;
+				transition:.3s;
+				text-indent:-9999px;
+			}
+			.section_title a.more_btn:hover{background-position: 0 0;}
+
+			.section .section_content{float: left;width: 800px;}
+			.section_content li{float: left;width: 266px;border-right: 1px solid #dddedf;padding:0 30px;}
+			.section_content li:last-child{border-right:0;}
+			.section_content h4{
+				height: 100px;
+				color:#56565e;font-size: 18px;font-weight:initial;
+				margin-bottom: 30px;
+			}
+			.section_content span.date{color:color:#979797;font-size: 14px;}
+
+	</style>
+</head>
+<body>
+	<div class="section">
+		<div class="section_title">
+			<h3><a href="#">뉴스룸</a></h3>
+			<a href="#" class="more_btn">more</a>
+		</div>
+		<div class="section_content">
+			<!-- ul.news_list>li*3>a[#]>h4.news_title>lorem10^span.date>{2020-08-13} -->
+			<ul class="news_list clearfix">
+				<li><a href="#">
+						<h4 class="news_title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, eius.</h4>
+						<span class="date">2020-08-13</span>
+					</a></li>
+				<li><a href="#">
+						<h4 class="news_title">Quia, placeat. Mollitia unde, labore ipsam, nihil suscipit aliquid. Nemo?</h4>
+						<span class="date">2020-08-13</span>
+					</a></li>
+				<li><a href="#">
+						<h4 class="news_title">Officiis fugiat cumque ipsam quos odio. Dicta expedita eius provident!</h4>
+						<span class="date">2020-08-13</span>
+				</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
