@@ -7,21 +7,30 @@
 	<link rel="stylesheet" href="../../css/reset.css">
 	<script src="../../js/jquery-3.1.1.min.js"></script>
 	<style>
-		#wrapper{width: 600px;margin: 0 auto;}
-		#wrapper ul{width: 522px;height: 400px;overflow:hidden;position: relative;}
+		#wrapper{width: 522px;margin: 0 auto;position: relative;}
+		#wrapper ul{width: 522px;height: 400px;overflow:hidden;position: relative;margin-bottom: 10px;}
 		#wrapper li{
 			width: 522px;height: 400px;
 			position: absolute;left: 100%;
 		}
 		#wrapper li:nth-child(1){left: 0;}
-
+		.pager{position: absolute;left: 50%;transform:translateX(-50%);}
+		.pager span{
+			display: inline-block;
+			width: 5px;height: 5px;border: 1px solid #000;
+			border-radius:3px;
+			text-indent:-9999px;
+		}
+	.pager span.active{background: #000;}
 	</style>
 	<script>
 		$(function(){
 
 			var current = 0;
 			var imgBanner = $("#wrapper li");
+			var pager= $(".pager>span");
 			var i;
+			var overbtn = false; //콜백함수
 
 	// -------------자동으로 슬라이드 움직이기
 
@@ -35,24 +44,50 @@
 			// setInterval(slideMove,3000);
 
 	// -------------버튼 눌러서 슬라이드 움직이기
-		//1. next 버튼 제작
-		//2. slideNext 함수 제작
-		//3. next 버튼 클릭 시 증감연산자 작동 여부
-		//4. 함수 내 current / i = current + 1 제작
-		//5. current banner dom 구하고 애니메이션 실행
-		//6. next banner dom 구하고 애니메이션 실행
-		//7. if(i==3){i=0};
-		//8. 함수 내의 i 값을 current 값으로 대입(current=i)
+		
 			function nextMove(){
-				i = current + 1;
-				var bannerEl = $("#wrapper li").eq(current);
-				console.log(i)
+			if(overbtn==false){
+					overbtn=true
+					i = current + 1;
+					if(i==4){i=0};
 
+					slideMove("next");
+				}
 			};
 			function prevMove(){
+				if(overbtn==false){
+					overbtn=true
+					i = current - 1;
+					if(i==-1){i=3};
 
+					slideMove("prev");
+				}
 			};
 
+			function slideMove(view){
+
+				var currentSl = imgBanner.eq(current);
+				var nextSl = imgBanner.eq(i);
+
+				pager.removeClass("active").eq(i).addClass("active")
+
+				if(view == "next"){
+					currentSl.css({left:0}).stop().animate({left:"-100%"},1000,function(){overbtn=false;});
+					nextSl.css({left:"100%"}).stop().animate({left:"0"},1000);
+				}else{
+					var currentSl = imgBanner.eq(current);
+					var nextSl = imgBanner.eq(i);
+
+					currentSl.css({left:0}).stop().animate({left:"100%"},1000,function(){overbtn=false});
+					nextSl.css({left:"-100%"}).stop().animate({left:0},1000);
+				}
+				current = i;
+			}
+
+			function trigger(){
+				$(".next").trigger("click");
+			}
+			setInterval(trigger,3000);
 
 			$(".next").click(function(){
 				nextMove();
@@ -60,6 +95,13 @@
 			$(".prev").click(function(){
 				prevMove();
 			});
+
+			$(".pager>span").click(function(){
+				i = $(this).index();
+				slideMove("next")
+			});
+			
+
 		});
 	</script>
 </head>
@@ -71,8 +113,15 @@
 			<li><img src="../images/fall.jpg" alt=""></li>
 			<li><img src="../images/winter.jpg" alt=""></li>
 		</ul>
+		<div class="pager">
+			<span class="active">1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+		</div>
 		<button class="prev">이전</button>	
-		<button class="next">다음</button>	
+		<button class="next">다음</button>
 	</div>
+	
 </body>
 </html>
