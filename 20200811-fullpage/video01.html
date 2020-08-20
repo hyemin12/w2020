@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>video</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.videoWrap{
+			width: 500px;height: 400px;margin: 0 auto;
+			border: 1px solid #000;
+			position: relative;
+		}
+
+		#my-video{width: 100%;height: 100%;position: absolute;object-fit:cover}
+	</style>
+</head>
+<body>
+	<div class="videoWrap">
+		<video id="my-video" autoplay muted loop poster="../images/pc01.jpg">
+			<source src="video/video.mp4" type="video/mp4">
+		</video>
+	</div>
+</body>
+</html>
