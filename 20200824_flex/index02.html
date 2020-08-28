@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>flex</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style type="text/css">
+		.wrapper{margin-bottom: 50px;padding:30px 0;}
+		.wrapper h3{
+			font-size:1.6em;text-align: center;
+			margin-bottom: 20px;
+		}
+		.intro{padding:20px 50px;}
+		.img{display: none;}
+
+		.program-list{}
+		.program-list h4{font-size:1.3em;margin-bottom: 20px;}
+		.program-list .program{
+			padding:30px;margin-bottom: 20px;
+			background: #fff;
+			border: 1px solid #aaa;
+		}
+
+		/*footer*/
+		#footer{
+			background: #34495e;
+			padding-top: 30px;
+			padding-bottom:50px;
+		}
+		.footer-info{padding: 0 20px;}
+		.contact{color:#fff;margin-bottom: 20px;}
+		.sns a{display: inline-block;}
+
+		.gray{background: #ccc;}
+
+		@media screen and (min-width:764px) {
+			.wrapper{width: 1200px;margin: 0 auto;}
+
+			.intro{display: flex;align-items:center;}
+			.intro .txt{flex:2;padding:0 50px;}
+			.intro .img{
+				display: block;display: flex;
+				flex:1;justify-content:center;
+				align-items:center;
+			}
+			.program-list{
+				display: flex;
+				justify-content:space-between;
+			}
+			.program{
+				_flex-grow:;
+				_flex-shrink:;
+				flex-basis:24%; 
+			}
+
+			/*footer*/
+			.footer-info{display: flex;}
+			.contact{flex:2;}
+			.sns{
+				flex:1;display: flex;
+				justify-content:flex-end;
+			}
+			.sns a{margin-left: 10px;}
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="wrapper">
+			<h3>Lorem ipsum dolor sit.</h3>
+			<div class="intro">
+				<div class="txt">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem sunt nostrum et molestias, obcaecati ut hic reiciendis nulla, alias adipisci in excepturi quisquam molestiae a eum, quia aliquam! Quis, totam.<br>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dolore aliquam repellat laudantium dolores dicta repellendus enim veritatis labore porro?
+				</div>
+				<div class="img">
+					<img src="images/coding.png" alt="" width="250">
+				</div>
+			</div>
+		</div>
+	</section>	
+	<section class="gray">
+		<div class="wrapper">
+			<h3>교육프로그램</h3>
+			<div class="program-list">
+				<div class="program">
+					<h4>Lorem, ipsum.</h4>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium aut mollitia aliquid quidem dicta repudiandae beatae porro quos nulla maxime.</p>
+				</div>
+				<div class="program">
+					<h4>Lorem, ipsum.</h4>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium aut mollitia aliquid quidem dicta repudiandae beatae porro quos nulla maxime.</p>
+				</div>
+				<div class="program">
+					<h4>Lorem, ipsum.</h4>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium aut mollitia aliquid quidem dicta repudiandae beatae porro quos nulla maxime.</p>
+				</div>
+				<div class="program">
+					<h4>Lorem, ipsum.</h4>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium aut mollitia aliquid quidem dicta repudiandae beatae porro quos nulla maxime.</p>
+				</div>
+			</div>
+		</div>
+	</section>	
+	<footer id="footer">
+		<div class="wrapper">
+			<div class="footer-info">
+				<div class="contact">
+					<p>Lorem, ipsum dolor, sit amet consectetur adipisicing.</p>
+					<p>Quaerat blanditiis, nisi aspernatur commodi, molestias nemo.</p>
+					<p>Omnis repellat dignissimos voluptatem, perspiciatis iusto quod.</p>
+					<p>Est, qui, placeat mollitia blanditiis soluta optio?</p>
+				</div>
+				<div class="sns">
+					<a href="#"><img src="images/fb.png" alt=""></a>
+					<a href="#"><img src="images/tw.png" alt=""></a>
+					<a href="#"><img src="images/ytube.png" alt=""></a>
+					<a href="#"><img src="images/gp.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

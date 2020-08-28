@@ -8,9 +8,9 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/jquery.bxslider.css">
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/jquery.bxslider.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>	
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<style>
 		.box1{height: 40px;}
 		.bgsky{background: skyblue !important;}
@@ -51,9 +51,72 @@
 					<button type="button" class="btn btn-success">product</button>
 					<button type="button" class="btn btn-info">basic</button>
 				</div>	
-				<button type="button" class="btn btn-info btn-block">basic</button>
+				<button type="button" class="btn btn-info btn-block mb-5">basic</button>
 			</div>
 		</div>
 	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="btn-group">
+				<button class="btn btn-primary active">Apple</button>
+				<button class="btn btn-primary">Samsung</button>
+				<div class="btn-group">
+					<button class="btn btn-primary" data-toggle="dropdown">Sony</button>
+					<div class="dropdown-menu">
+						<a href="#" class="dropdown-item">tablet</a>
+						<a href="#" class="dropdown-item">smartphone</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<style>
+	.fff{color:#fff !important;}
+</style>
+
+	<ul class="nav bg-primary">
+		<li class="nav-item">
+			<a href="#" class="nav-link fff">menu1</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="nav-link fff">menu2</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="nav-link fff">menu3</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="nav-link fff">menu4</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="nav-link fff">menu5</a>
+		</li>
+	</ul>
+	<div style="height:20px"></div>
+	<div class="container">
+		<ul class="nav nav-tabs">
+			<li class="nav-item">
+				<a href="#menu1" class="nav-link active" data-toggle="tab">link1</a>
+			</li>
+			<li class="nav-item">
+				<a href="#menu2" class="nav-link" data-toggle="tab">link2</a>
+			</li>
+			<li class="nav-item">
+				<a href="#menu3" class="nav-link" data-toggle="tab">link3</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="menu1">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum reiciendis magnam, ut distinctio, ex expedita iure corrupti molestias pariatur, quas quaerat obcaecati nobis? Beatae eos ipsam, praesentium quos, fugiat omnis.
+			</div>
+			<div class="tab-pane fade" id="menu2">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum reiciendis magnam, ut distinctio, ex expedita iure corrupti molestias pariatur, quas quaerat obcaecati nobis? Beatae eos ipsam, praesentium quos, fugiat omnis.
+			</div>
+			<div class="tab-pane fade" id="menu3">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum reiciendis magnam, ut distinctio, ex expedita iure corrupti molestias pariatur, quas quaerat obcaecati nobis? Beatae eos ipsam, praesentium quos, fugiat omnis.
+			</div>
+		</div>
+	</div>	
 </body>
 </html>
