@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>hompage</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		.wrap {width: 500px;height: 500px;background: skyblue;display: flex;justify-content:center;align-items:center;}
+
+		.wrap1 {width: 500px;height: 500px;background: pink;display: flex;}
+		.wrap1 div {flex:1;display: flex;justify-content:center;align-items:center;}
+		.wrap1 div:hover {flex:2;}
+		.wrap1 div:nth-child(2n) {background: gray;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		1
+	</div>
+	<div class="wrap1">
+		<div>Lorem.</div>
+		<div>At.</div>
+		<div>Odio!</div>
+		<div>Iusto!</div>
+	</div>
+</body>
+</html>
