@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #bfd824;
+  color: #1bb1dc;
   transition: 0.5s;
 }
 
@@ -315,7 +315,6 @@ h1, h2, h3, h4, h5, h6 {
   left: -260px;
   width: 260px;
   padding-top: 18px;
-  padding-right:15px;
   background: rgba(40, 38, 70, 0.8);
   transition: 0.4s;
 }
