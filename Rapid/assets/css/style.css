@@ -462,6 +462,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
   }
 }
+#hero .intro-info p.t1 {
+  font-size:;
+}
 
 #hero .intro-info .btn-get-started, #hero .intro-info .btn-services {
   font-family: "Montserrat", sans-serif;
